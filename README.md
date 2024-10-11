@@ -40,14 +40,24 @@ This system allows users to purchase policies, file claims, and enables administ
 
  ## API ENDPOINT
 http://127.0.0.1:8000/api/register
+
 http://127.0.0.1:8000/api/login
+
 http://127.0.0.1:8000/api/purchasePolicy - post -Purchase Policy 
+
 http://127.0.0.1:8000/api/getPolicies
+
 http://127.0.0.1:8000/api/fileClaim
+
 http://127.0.0.1:8000/api/getClaims
 ## Admin Routes Endpoint 
+
+
 http://127.0.0.1:8000/api/getAllClaims
+
 http://127.0.0.1:8000/api/getAllPurchasePolicies
+
+
 http://127.0.0.1:8000/api/updateClaimStatus/:claimId
 
 ___________________________________________________________________________________
