@@ -32,3 +32,13 @@ This system allows users to purchase policies, file claims, and enables administ
 
 2. I have installed concurrently We can run npm start on Parent folder ( Please rename Insurance policy folder to Frontend)
 
+## Admin User 
+ Admin User automatically will genrate when db connected 
+ Username : admin@gmail.com
+ Password : admin@123
+ ==========================
+
+
+
+
+
