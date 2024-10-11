@@ -7,15 +7,15 @@ const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com', 
   port:465,
   auth: {
-    user: 'rahulraut430@gmail.com', 
-    pass: 'idcslcpfjbftbbcx', 
+    user: 'abc@gmail.com', 
+    pass: 'put your gmail app password', 
   },
 });
 
 // Function to send email
 const sendEmail = (to, subject, text) => {
   const mailOptions = {
-    from: 'rahulraut430@gmail.com',
+    from: 'abc@gmail.com', //sender gmail Id
     to:to,
     subject:subject,
     html:text,

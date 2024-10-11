@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const userRoutes = require('./routes/route')
+const userController = require('./controller/apiController')
 const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -18,7 +19,10 @@ const port = process.env.PORT
 const Dburl = process.env.MONGO_URL
 //connect database
 mongoose.connect(Dburl)
-.then(() => console.log("Database connected"))
+.then(() => {
+    console.log("Database connected")
+    userController.createAdminUser()
+})
 .catch((Error) => console.log("connection error"+Error))
 
 
@@ -31,9 +35,9 @@ app.get('/',(req,res) => {
 app.use('/api',userRoutes)
 
 
-
-
-
 app.listen(port,() => {
     console.log(`Server is listening on ${port}`)
 })
+
+
+module.exports = app //export for testing

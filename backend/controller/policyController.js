@@ -9,7 +9,7 @@ const purchasePlicy = async (req,res) => {
         await savePolicy.save()
         
         //calling sendmail function to sending mail
-       const sendmail =  await sendEmail(usermail,'Policy Purchase Confirmation','Thank you for purchasing the policy')
+      // const sendmail =  await sendEmail(usermail,'Policy Purchase Confirmation','Thank you for purchasing the policy')
        
             res.status(201).json({
                 "status":"Success",

@@ -78,8 +78,32 @@ const login = async(req,res) => {
 
 }
 
+const createAdminUser = async () => {
+    const adminUser = {
+        name: 'admin',
+        email: 'admin@gmail.com', 
+        password: 'admin@123', 
+        mobile:'1236547890',
+        role: 'admin'
+    };
+
+    try {
+        const existingUser = await User.findOne({ role: adminUser.role });
+        if (!existingUser) {
+            // Hash the password before saving
+            adminUser.password = await bcrypt.hash(adminUser.password, 10);
+            await User.create(adminUser);
+            console.log('Admin user created');
+        } else {
+            console.log('Admin user already exists');
+        }
+    } catch (error) {
+        console.error('Error creating admin user:', error);
+    }
+};
 
 
 
 
-module.exports = {register,login}
+
+module.exports = {register,login,createAdminUser}
